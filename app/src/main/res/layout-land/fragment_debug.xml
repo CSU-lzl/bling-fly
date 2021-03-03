@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="airplaneData"
+            type="com.example.blingfly.viewmodel.AirplaneViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.DebugFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="92dp"
+                app:layout_constraintGuide_percent="0.035" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline53"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="62dp"
+                app:layout_constraintGuide_percent="0.12" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout10"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/whitesmoke"
+                app:layout_constraintBottom_toTopOf="@+id/guideline53"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_rtn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/btn_return_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline51" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline57"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="222dp"
+                app:layout_constraintGuide_percent="0.56" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline58"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="356dp"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="500dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toTopOf="@+id/guideline57"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="1dp"
+                android:layout_height="288dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                app:layout_constraintTop_toTopOf="@+id/guideline53" />
+
+            <Button
+                android:id="@+id/btn_gyro"
+                android:layout_width="250dp"
+                android:layout_height="144dp"
+                android:background="@drawable/btn_gyro"
+                android:onClick="@{()->airplaneData.setComGyroCali(true)}"
+                app:layout_constraintBottom_toTopOf="@+id/guideline57"
+                app:layout_constraintEnd_toStartOf="@+id/guideline58" />
+
+            <Button
+                android:id="@+id/btn_mag"
+                android:layout_width="250dp"
+                android:layout_height="144dp"
+                android:background="@drawable/btn_mag"
+                android:onClick="@{()->airplaneData.setComMagCali(true)}"
+                app:layout_constraintBottom_toTopOf="@+id/guideline57"
+                app:layout_constraintStart_toStartOf="@+id/guideline58" />
+
+            <Button
+                android:id="@+id/btn_esc"
+                android:layout_width="250dp"
+                android:layout_height="144dp"
+                android:background="@drawable/btn_esc"
+                android:onClick="@{()->airplaneData.setComEscCali(true)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                app:layout_constraintTop_toTopOf="@+id/guideline57" />
+
+            <Button
+                android:id="@+id/btn_data"
+                android:layout_width="250dp"
+                android:layout_height="144dp"
+                android:background="@drawable/btn_data"
+                app:layout_constraintStart_toStartOf="@+id/guideline58"
+                app:layout_constraintTop_toTopOf="@+id/guideline57" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>
